@@ -2,6 +2,11 @@ import './App.css';
 import { useSelector, useDispatch, connect } from 'react-redux'
 import { clearData, fetchData, incrementId, decrementId, inputId } from './features/dataSlice'
 import { useEffect } from 'react';
+import Nav from './components/Nav'
+import ContentWrapper from './components/ContentWrapper'
+import Footer from './components/Footer'
+
+
 
 function App(props) {
   const dispatch = useDispatch()
@@ -22,7 +27,10 @@ function App(props) {
 
   return (
     <div className="App">
+      <Nav/> 
+      <ContentWrapper/>
       <div>
+       
         <button onClick={() => dispatch(fetchData())}>Thunk!</button>
         <button onClick={() => dispatch(clearData())}>Clear</button>
         <button onClick={() => dispatch(incrementId())}>Next</button>
