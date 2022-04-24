@@ -8,6 +8,7 @@ import {
   decrementId,
   inputId,
 } from "../features/dataSlice";
+import Def from "./Def";
 
 function ContentWrapper(props) {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ function ContentWrapper(props) {
     if (data.apiData) {
       return (
         <img
-          style={{ width: "100vw" }}
+          style={{ width: "100vw", height: "100vw" }}
           src={data.apiData.primaryImage}
           alt={data.apiData.title}
         />
@@ -32,7 +33,8 @@ function ContentWrapper(props) {
   }, [props.objectId, dispatch]);
 
   return (
-    <div className="ContentWrapper" style={{ backgroundColor: "white" }}>
+    <Def>
+    <div className="ContentWrapper" >
       <div>
         <button onClick={() => dispatch(fetchData())}>Thunk!</button>
         <button onClick={() => dispatch(clearData())}>Clear</button>
@@ -50,6 +52,7 @@ function ContentWrapper(props) {
         {renderImg()}
       </div>
     </div>
+    </Def>
   );
 }
 
