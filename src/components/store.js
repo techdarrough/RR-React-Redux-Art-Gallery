@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-exporrt conststore = configureStore({
+export const store = configureStore({
     reducer: {
-        
+
     }
 })
