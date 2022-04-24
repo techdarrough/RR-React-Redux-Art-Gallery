@@ -22,7 +22,7 @@ export const dataSlice = createSlice({
         incrementId: (state) => {
           return{...state, objectId: state.objectId + 1}
         },
-        decrement: (state) => {
+        decrementId: (state) => {
           return {...state, objectId: state.objectId - 1}
         }
 
